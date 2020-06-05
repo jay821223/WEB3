@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Raleway&display=swap" rel="stylesheet">
+    <style>
+        #content{
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Raleway', sans-serif;
+            width: 900px; height: 900px;
+            margin: auto;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 900px;
+            margin: auto;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        #title{
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 100px;
+            color: red;
+        }
+        .small{
+            font-size: 20px;
+            color: gray;
+        }
+        a{
+            text-decoration: none;
+            color: dimgray;
+        }
+        li:hover{
+            background-color: rgba(255, 20, 147, 0.1);
+        }
+        .update_btn{
+            width:10%; height:30px;
+            background-color: skyblue;
+            color:white; border-radius:5px;
+            margin-top: 10px;
+            font-family: 'Heebo'; font-weight: bolder;
+            font-size: 15px;
+        }
+        .delete_btn{
+            width:10%; height:30px;
+            background-color: red;
+            color:white; border-radius:5px;
+            margin-top: 10px;
+            font-family: 'Heebo'; font-weight: bolder;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1 id="title">{{ object.title }}</h1>
+        <a href="{% url 'bookmark_update' bookmark.id %}">
+            <button class="update_btn">UPDATE</button>
+        </a>
+        <a href="{% url 'bookmark_delete' bookmark.id %}">
+            <button class="delete_btn">DELETE</button>
+        </a>
+        <ul>
+            <li>URL: <a href="{{ object.url }}">{{ object.url }}</a></li>
+            <li>Create Date: {{ object.create_date }}</li>
+            <li>Modify Date: {{ object.modify_date }}</li>
+        </ul>
+    </div>
+
+</body>
+</html>

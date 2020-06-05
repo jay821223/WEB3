@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .add_form{
+            width:400px;
+            height:auto;
+            margin:auto;
+            margin-top:50px;
+            border: 1px solid orangered;
+            border-radius: 5px;
+            padding: 30px;
+            font-family: 'Heebo';
+            font-weight: bolder;
+        }
+        .add_label, .add_input{display:inline-block;}
+        .add_label{width:100%;}
+        .add_input{width:100%;}
+        input{width:100%;}
+        .add_btn{
+            width:50%; height:30px;
+            background-color:orangered;
+            color:white; border-radius:5px;
+            margin-top: 10px;
+            font-family: 'Heebo'; font-weight: bolder;
+            font-size: 15px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1>Bookmark Add</h1>
+<div class="add_form">
+<form method="post" action=".">{% csrf_token %}
+    <div>
+        <div class="add_label">{{ form.title.label_tag }} {{ form.title }}</div>
+    </div>
+    <div>
+        <div class="add_label">{{ form.url.label_tag }} {{ form.url }}</div>
+    </div>
+    <button type="submit" class="add_btn">CREATE / UPDATE</button>
+</form>
+</div>
+</body>
+</html>

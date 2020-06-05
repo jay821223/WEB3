@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged Out</title>
+    <style>
+        .logout_form{
+            width:200px; height:auto;
+            margin:auto; margin-top:250px;
+            border:1px solid orangered;
+            border-radius:5px; padding:30px;
+            font-family: 'Heebo'; font-weight: bolder;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="logout_form" >
+    <p><h2>sign out</h2></p>
+    <p><a href="{% url 'index' %}">Go Index</a> | <a href="{% url 'login' %}">Sign in Again</a></p>
+</div>
+</body>
+</html>
